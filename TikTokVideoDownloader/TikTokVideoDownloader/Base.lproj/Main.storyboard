@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7s5-ON-Vs9">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -8,23 +8,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Download for TikTok-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TikTokVideoDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="TikTokVideoDownloader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bBm-W8-lGP">
+                                <rect key="frame" x="0.0" y="108" width="414" height="41"/>
+                                <segments>
+                                    <segment title="DOWNLOAD"/>
+                                    <segment title="HISTORY"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Paste URL here" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="fUI-Rh-7Ob">
+                                <rect key="frame" x="20" y="168" width="374" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-H7-73I">
+                                <rect key="frame" x="50" y="238" width="314" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GR1-ef-wU1">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="40"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Paste">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2f-Bw-oHf">
+                                        <rect key="frame" x="177" y="0.0" width="137" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Open TikTok">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GR1-ef-wU1" firstAttribute="leading" secondItem="DoE-H7-73I" secondAttribute="leading" id="9aN-VL-FWI"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2f-Bw-oHf" secondAttribute="trailing" id="F2h-17-TZj"/>
+                                    <constraint firstItem="J2f-Bw-oHf" firstAttribute="top" secondItem="DoE-H7-73I" secondAttribute="top" id="PYH-Ts-RRD"/>
+                                    <constraint firstItem="GR1-ef-wU1" firstAttribute="top" secondItem="DoE-H7-73I" secondAttribute="top" id="mhY-MR-9kr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DoE-H7-73I" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="40/896" id="6V0-Vc-HnQ"/>
+                            <constraint firstItem="fUI-Rh-7Ob" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="50/896" id="CCL-f9-8i5"/>
+                            <constraint firstItem="DoE-H7-73I" firstAttribute="top" secondItem="fUI-Rh-7Ob" secondAttribute="bottom" constant="20" id="FW6-01-5yh"/>
+                            <constraint firstItem="bBm-W8-lGP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H2e-Wa-yBa"/>
+                            <constraint firstItem="fUI-Rh-7Ob" firstAttribute="top" secondItem="bBm-W8-lGP" secondAttribute="bottom" constant="20" id="M4w-Ln-CUv"/>
+                            <constraint firstItem="bBm-W8-lGP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VVJ-WG-TKZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bBm-W8-lGP" secondAttribute="trailing" id="aPz-Gv-SCm"/>
+                            <constraint firstItem="DoE-H7-73I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="aeY-kL-y4r"/>
+                            <constraint firstItem="fUI-Rh-7Ob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ayH-Rh-Hv9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DoE-H7-73I" secondAttribute="trailing" constant="50" id="bPf-Ia-8ST"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fUI-Rh-7Ob" secondAttribute="trailing" constant="20" id="emb-O1-n7Y"/>
+                            <constraint firstItem="bBm-W8-lGP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="40/896" id="rHe-mF-T11"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Download for TikTok" id="LXP-kQ-Ehy"/>
+                    <connections>
+                        <outlet property="openTikTokButton" destination="J2f-Bw-oHf" id="cUT-9t-fsI"/>
+                        <outlet property="pasteButton" destination="GR1-ef-wU1" id="lcf-zp-xf0"/>
+                        <outlet property="segmentss" destination="bBm-W8-lGP" id="vXU-OI-QH8"/>
+                        <outlet property="urlTextField" destination="fUI-Rh-7Ob" id="fI7-1N-xu1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="4"/>
+            <point key="canvasLocation" x="969.56521739130437" y="3.3482142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nRX-Ue-yph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7s5-ON-Vs9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sGT-qA-1zg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iOH-Nx-uxG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVv-d0-nt3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59.420289855072468" y="3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
