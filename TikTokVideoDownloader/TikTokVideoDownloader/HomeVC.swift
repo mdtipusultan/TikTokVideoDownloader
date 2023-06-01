@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        urlTextField.becomeFirstResponder()
         openTikTokButton.layer.shadowColor = UIColor.black.cgColor
         openTikTokButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         openTikTokButton.layer.shadowRadius = 2
@@ -30,6 +31,13 @@ class HomeVC: UIViewController {
 
     }
     
+    @IBAction func pasteButtonTapped(_ sender: UIButton) {
+        if let pasteString = UIPasteboard.general.string {
+            // Use the pasteString variable, which contains the copied text
+            // You can assign it to a UITextField or perform any other required operation
+            urlTextField.text = pasteString
+        }
+    }
 
 
 }
